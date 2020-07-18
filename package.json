@@ -1,5 +1,5 @@
 {
-  "name": "react-native-zendesk",
+  "name": "react-native-rzendesk",
   "version": "0.1.0",
   "description": "Using feature zendesk",
   "main": "lib/commonjs/index",

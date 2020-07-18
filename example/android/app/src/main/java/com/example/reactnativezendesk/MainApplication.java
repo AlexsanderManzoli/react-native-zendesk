@@ -13,6 +13,11 @@ import java.util.List;
 
 import com.reactnativezendesk.ZendeskPackage;
 
+import zendesk.core.AnonymousIdentity;
+import zendesk.core.Zendesk;
+import zendesk.support.Support;
+import zendesk.support.request.RequestActivity;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
@@ -48,6 +53,15 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+    Zendesk.INSTANCE.init(this, "https://testealex.zendesk.com",
+      "bbf1ac571c98cd010f267c88f5717e73ce6c5ed8b2ce1b5b",
+      "mobile_sdk_client_bb71af1eecc60f600fb7");
+    Support.INSTANCE.init(Zendesk.INSTANCE);
+    Zendesk.INSTANCE.setIdentity(new AnonymousIdentity());
+
+//    RequestActivity.builder()
+//      .show(this);
+
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager()); // Remove this line if you don't want Flipper enabled
   }
 

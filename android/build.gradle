@@ -33,9 +33,9 @@ android {
     targetSdkVersion getExtOrIntegerDefault('targetSdkVersion')
     versionCode 1
     versionName "1.0"
-    
+
   }
-  
+
   buildTypes {
     release {
       minifyEnabled false
@@ -54,6 +54,7 @@ repositories {
   mavenCentral()
   jcenter()
   google()
+  maven { url 'https://zendesk.jfrog.io/zendesk/repo' }
 
   def found = false
   def defaultDir = null
@@ -127,4 +128,9 @@ dependencies {
   // noinspection GradleDynamicVersion
   api 'com.facebook.react:react-native:+'
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  api group: 'com.zendesk', name: 'messaging', version: '4.2.1'
+  api group: 'com.zendesk', name: 'support', version: '4.0.0'
+  api group: 'com.zendesk', name: 'answerbot', version: '2.0.0'
+  api group: 'com.zendesk', name: 'chat', version: '2.0.0'
+  api group: 'com.zendesk', name: 'chat-providers', version: '2.2.0'
 }

@@ -132,6 +132,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     splits {
         abi {
@@ -189,6 +190,10 @@ dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
+    api group: 'com.zendesk', name: 'messaging', version: '4.2.1'
+    api group: 'com.zendesk', name: 'support', version: '4.0.0'
+    api group: 'com.zendesk', name: 'answerbot', version: '2.0.0'
+    api group: 'com.zendesk', name: 'chat', version: '2.0.0'
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
